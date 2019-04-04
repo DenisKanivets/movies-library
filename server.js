@@ -5,14 +5,22 @@ const path = require("path");
 const db = require("./config/keys").mongoURI;
 const app = express();
 
-app.use(bodyParser.urlencoded({ extended: false }));
+const addMovie = require("./routes/addMovie");
+const deleteMovie = require("./routes/deleteMovie");
+const allMovies = require("./routes/allMovies");
+
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "client/build")));
 
 mongoose
-    .connect(db, { useNewUrlParser: true })
+    .connect(db, {useNewUrlParser: true})
     .then(() => console.log("MongoDB connected"))
     .catch(err => console.log(err));
+
+app.use("/", addMovie);
+app.use("/", deleteMovie);
+app.use("/", allMovies);
 
 const port = process.env.PORT || 9000;
 let server = app.listen(port, () =>

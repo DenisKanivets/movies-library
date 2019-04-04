@@ -2,15 +2,15 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const MovieSchema = new Schema({
-    date: {
-        type: Date,
-        default: Date.now
+    uniqId: {
+        type: Number,
+        required: true
     },
     title: {
         type: String,
         required: true
     },
-    release: {
+    year: {
         type: Number,
         required: true
     },
@@ -21,6 +21,10 @@ const MovieSchema = new Schema({
     stars: {
         type: String,
         required: true
+    },
+    date: {
+        type: Date,
+        default: Date.now
     }
 });
 
