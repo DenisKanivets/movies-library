@@ -1,0 +1,29 @@
+.second-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 200px;
+
+
+  .info {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .upload {
+    height: 30px;
+    outline: none;
+    font-size: 16px;
+  }
+
+  .upload-btn {
+    margin: 10px 0;
+    padding: 5px;
+    border: 1px solid green;
+    background: green;
+    border-radius: 10px;
+    cursor: pointer;
+    outline: none;
+    font-size: 16px;
+  }
+}

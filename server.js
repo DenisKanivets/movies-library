@@ -6,6 +6,7 @@ const db = require("./config/keys").mongoURI;
 const app = express();
 
 const addMovie = require("./routes/addMovie");
+const uploadMovie = require("./routes/uploadMovie");
 const deleteMovie = require("./routes/deleteMovie");
 const allMovies = require("./routes/allMovies");
 
@@ -19,6 +20,7 @@ mongoose
     .catch(err => console.log(err));
 
 app.use("/", addMovie);
+app.use("/", uploadMovie);
 app.use("/", deleteMovie);
 app.use("/", allMovies);
 

@@ -1,0 +1,94 @@
+.open-form {
+  font-weight: 900;
+  font-size: 30px;
+  border: 1px solid green;
+  background: green;
+  color: white;
+  border-radius: 50px;
+  width: 50px;
+  line-height: 50px;
+  text-align: center;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  cursor: pointer;
+}
+
+.form-block {
+  z-index: 1;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  border: 1px solid green;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 0 5px green;
+  background: white;
+  display: flex;
+
+
+  .first-form {
+    display: flex;
+    flex-direction: column;
+
+
+    & > *:focus {
+      box-shadow: 0 0 5px gray;
+    }
+
+    input {
+      margin: 10px 0;
+      height: 30px;
+      border-radius: 5px;
+      border: 1px solid gray;
+      outline: none;
+      padding: 0 0 0 10px;
+      font-size: 16px;
+    }
+
+    select {
+      height: 30px;
+      border-radius: 5px;
+      border: 1px solid gray;
+      outline: none;
+    }
+
+    textarea {
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid gray;
+      outline: none;
+      padding: 0 0 0 10px;
+      font-size: 16px;
+    }
+
+    .add-movie {
+      padding: 5px;
+      border: 1px solid green;
+      background: green;
+      border-radius: 10px;
+      cursor: pointer;
+      outline: none;
+      font-size: 16px;
+    }
+  }
+
+  .or {
+    font-size: 24px;
+    font-weight: 700;
+    vertical-align: center;
+    line-height: 340px;
+    margin: 0 10px;
+  }
+
+  .cancel {
+    font-size: 30px;
+    font-weight: 900;
+    color: red;
+    cursor: pointer;
+    margin-left: 10px;
+    position: relative;
+    bottom: 15px;
+    left: 10px;
+  }
+}
