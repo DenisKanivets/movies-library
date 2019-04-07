@@ -10,29 +10,6 @@
   cursor: pointer;
 }
 
-.delete-movie {
-  display: inline-block;
-  border: 1px solid transparent;
-  border-radius: 10px;
-  background: red;
-  padding: 10px 40px;
-  color: black;
-  margin-right: 500px;
-  float: right;
-  outline: none;
-  cursor: pointer;
-}
-
-.delete-status {
-  font-weight: 900;
-  font-size: 40px;
-  color: white;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%);
-}
-
 .movie-item {
   border: 1px solid gray;
   border-radius: 10px;
@@ -40,12 +17,11 @@
   margin: 30px 100px;
   padding: 20px;
   display: flex;
-  justify-content: center;
 
   img {
     height: 250px;
     width: 250px;
-    margin-right: 100px;
+    margin-right: 70px;
   }
 
   .movie-more-info {

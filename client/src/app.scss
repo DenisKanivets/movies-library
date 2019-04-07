@@ -1,0 +1,14 @@
+body {
+  background: url("http://clipart-library.com/images/rTnreyLAc.jpg") no-repeat;
+  background-size: cover;
+}
+
+.loading {
+  font-weight: 900;
+  font-size: 40px;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+}

@@ -17,42 +17,41 @@
     }
 
     .item-info {
-      margin: 10px 40px;
+      padding: 10px;
+      width: 360px;
 
-      .title {
+      p {
         font-weight: 700;
         font-size: 24px;
-        width: 350px;
-      }
-
-      .year {
-
       }
     }
-    .show-more {
+
+    .more-info {
       position: absolute;
-      right: 30px;
-      top: 50%;
-      transform: translateY(-50%);
+      right: 80px;
+      height: 40px;
       border: 1px solid transparent;
       border-radius: 10px;
       background: yellow;
       padding: 10px;
       color: black;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .delete {
+      position: absolute;
+      right: 10px;
+      font-size: 16px;
+      font-family: Monseratt, sans-serif;
+      height: 40px;
+      border: 1px solid transparent;
+      border-radius: 10px;
+      padding: 10px;
+      color: black;
+      background: red;
+      outline: none;
+      cursor: pointer;
     }
   }
-}
-
-.order-btn {
-  position: absolute;
-  right: 10px;
-  font-size: 18px;
-  margin: 30px;
-  border: 1px solid transparent;
-  border-radius: 10px;
-  background: green;
-  padding: 10px;
-  color: black;
-  outline: none;
-  cursor: pointer;
 }

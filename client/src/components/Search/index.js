@@ -3,34 +3,31 @@ import './search.scss';
 
 class Search extends Component {
     state = {
-        titleSearch: '',
-        actorSearch: ''
+        data: this.props.data
     };
 
     titleSearch = (e) => {
-        this.setState({titleSearch: e.target.value.toLowerCase()});
-        let filterData = this.props.data.filter(movie => {
-            return movie.title.toLowerCase().includes(this.state.titleSearch);
+        let filterTitleData = this.state.data.filter(item => {
+            return item.title.toLowerCase().search(e.target.value.toLowerCase()) !== -1;
         });
-        this.props.updateData(filterData)
+        this.props.filterData(filterTitleData)
     };
 
-    actorSearch = (e) => {
-        this.setState({actorSearch: e.target.value.toLowerCase()});
-        let filterData = this.props.data.filter(movie => {
-            return movie.stars.toLowerCase().includes(this.state.actorSearch);
+    starsSearch = (e) => {
+        let filterStarsData = this.state.data.filter(item => {
+            return item.stars.toLowerCase().search(e.target.value.toLowerCase()) !== -1;
         });
-        this.props.updateData(filterData)
+        this.props.filterData(filterStarsData)
     };
 
     render() {
         return (
-            <div className="search-block">
+            <form className="search-block">
                 <input className="search-bar" type="text" onChange={this.titleSearch}
                        placeholder="Search movie by title..."/>
-                <input className="search-bar" type="text" onChange={this.actorSearch}
+                <input className="search-bar" type="text" onChange={this.starsSearch}
                        placeholder="Search movie by actor..."/>
-            </div>
+            </form>
         )
     }
 }

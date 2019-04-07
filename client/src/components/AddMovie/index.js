@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
+import UploadFile from "../UploadFile";
 import axios from "axios";
 import './addMovie.scss';
-import UploadFile from "../UploadFile";
+
 
 class AddMovie extends Component {
     state = {
@@ -44,6 +45,12 @@ class AddMovie extends Component {
             .then(console.log('movie has been added'))
             .then(this.setState({title: "", year: "", format: "", stars: "", openModal: false}))
             .catch(err => console.log(err));
+
+        this.props.refreshData();
+    };
+
+    childRefreshData = () => {
+        this.props.refreshData();
     };
 
     closeModal = () => {
@@ -75,7 +82,7 @@ class AddMovie extends Component {
                         <input className="add-movie" type="submit" value="Add movie"/>
                     </form>
                     <p className="or"> Or </p>
-                    <UploadFile closeModal={this.closeModal}/>
+                    <UploadFile childRefreshData={this.childRefreshData} closeModal={this.closeModal}/>
                     <p className="cancel" onClick={() => this.setState({openModal: false})}>X</p>
                 </div>
             )

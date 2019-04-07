@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
+import axios from "axios";
 import './uploadFile.scss';
 import example from './example.png'
-import axios from "axios";
 
 class UploadFile extends Component {
     state = {
@@ -55,10 +55,12 @@ class UploadFile extends Component {
         e.preventDefault();
         axios.post("/movies/upload", sendUploadMovie)
             .then(res => res.data)
-            .then(console.log('movie has been added'))
+            .then(console.log('file has been uploaded and movie has been added'))
             .then(this.setState({uploadData: null}))
             .catch(err => console.log(err));
+
         this.props.closeModal();
+        this.props.childRefreshData();
     };
 
     render() {
