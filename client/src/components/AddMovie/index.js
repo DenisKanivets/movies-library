@@ -68,7 +68,7 @@ class AddMovie extends Component {
                     <form className="first-form" onSubmit={this.sendMovie}>
                         <input required onChange={this.handleChangeTitle} type="text" value={this.state.title}
                                placeholder="Enter title of movie here..."/>
-                        <input required onChange={this.handleChangeYear} type="text" value={this.state.year}
+                        <input required onChange={this.handleChangeYear} type="number" min="1" value={this.state.year}
                                placeholder="Enter release year here..."/>
                         <select required onChange={this.handleChangeFormat}>
                             <option/>

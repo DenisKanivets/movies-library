@@ -14,7 +14,7 @@ class App extends Component {
         mainData: []
     };
 
-    orderFunc() {
+    alphabetOrderFunc() {
         let alphabetOrderData = this.state.mainData;
         alphabetOrderData.sort(function (a, b) {
             let nameA = a.title.toLowerCase(), nameB = b.title.toLowerCase();
@@ -31,7 +31,7 @@ class App extends Component {
         await axios.get("/movies")
             .then(res => this.setState({mainData: res.data}))
             .catch(err => console.log(err));
-        this.orderFunc();
+        this.alphabetOrderFunc();
     };
 
     refreshData = () => {
@@ -44,7 +44,7 @@ class App extends Component {
                 .then(res => this.setState({mainData: res.data}))
                 .catch(err => console.log(err));
             this.setState({refresh: false});
-            this.orderFunc();
+            this.alphabetOrderFunc();
         }
     };
 
