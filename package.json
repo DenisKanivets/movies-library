@@ -7,13 +7,19 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "nodemon server.js",
     "front": "npm run start --prefix client",
-    "dev": "concurrently \"npm run server\"  \"npm run front\""
+    "dev": "concurrently \"npm run server\"  \"npm run front\"",
+    "start": "node server.js",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
+  },
+  "engines": {
+    "node": "10.14.2"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
+    "dotenv": "^7.0.0",
     "express": "^4.16.4",
     "mongoose": "^5.4.21",
     "unique-random": "^2.0.0"
